@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 입시컨설팅 할인이벤트 | 제이클래식</title>
+<style>
+@font-face{font-family:'GmarketSans';src:url('fonts/GmarketSansBold.otf') format('opentype');font-weight:700;font-display:swap}
+@font-face{font-family:'GmarketSans';src:url('fonts/GmarketSansMedium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'GmarketSans';src:url('fonts/GmarketSansLight.otf') format('opentype');font-weight:300;font-display:swap}
+@font-face{font-family:'SCDream';src:url('fonts/SCDream4.otf') format('opentype');font-weight:400;font-display:swap}
+@font-face{font-family:'SCDream';src:url('fonts/SCDream5.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'SCDream';src:url('fonts/SCDream6.otf') format('opentype');font-weight:600;font-display:swap}
+@font-face{font-family:'SCDream';src:url('fonts/SCDream7.otf') format('opentype');font-weight:700;font-display:swap}
+
+:root{
+  --red:#8B1A1A;
+  --red2:#c0392b;
+  --yellow:#FAE300;
+  --dark:#111;
+  --ft:'SCDream',sans-serif;
+  --fg:'GmarketSans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--ft);background:#fff;color:#1a1a1a;overflow-x:hidden;font-size:15px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none}
+
+/* ── 1. HERO ── */
+.hero{position:relative;height:100svh;max-height:700px;min-height:480px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(170deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.6) 50%,rgba(0,0,0,.93) 100%)}
+.hero-inner{position:relative;z-index:2;padding:28px 24px 40px}
+.hero-logo{width:48px;margin-bottom:16px}
+.hero h1{font-family:var(--fg);font-size:clamp(40px,11vw,64px);font-weight:700;color:#fff;line-height:1.12;letter-spacing:-1.5px;margin-bottom:26px}
+.kakao-btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#3C1E1E;font-family:var(--ft);font-size:14px;font-weight:600;padding:12px 20px;border-radius:50px;cursor:pointer;border:none}
+.kakao-ch{background:#3C1E1E;color:var(--yellow);font-size:11px;font-weight:700;padding:3px 7px;border-radius:5px}
+
+/* ── 2. 이벤트 타이틀 ── */
+.event-sec{padding:48px 24px 44px;text-align:center}
+.event-sec h2{font-family:var(--fg);font-size:clamp(28px,8vw,46px);font-weight:700;line-height:1.2;margin-bottom:16px;color:var(--dark)}
+.event-desc{font-family:var(--ft);font-size:14px;color:#555;line-height:1.8;margin-bottom:24px;font-weight:400}
+.price-stack{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:28px}
+.s1{font-size:13px;color:#bbb;text-decoration:line-through;font-weight:400}
+.s2{font-size:17px;color:var(--red2);text-decoration:line-through;font-weight:600}
+.final-p{font-family:var(--fg);font-size:clamp(32px,10vw,50px);font-weight:700;color:var(--red2)}
+.app-dl{display:inline-block;background:var(--dark);color:#fff;padding:14px 44px;border-radius:50px;font-size:15px;font-weight:600;font-family:var(--ft);letter-spacing:.3px}
+
+/* ── 3. 앱 목업 그리드 ── */
+.mockup-grid{display:grid;grid-template-columns:1fr 1fr}
+.mockup-cell{overflow:hidden;aspect-ratio:1/1}
+.mockup-cell img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.mockup-cell:hover img{transform:scale(1.04)}
+
+/* ── 4. CTA 바 ── */
+.cta-bar{background:var(--dark);padding:32px 24px;text-align:center}
+.cta-bar h2{font-family:var(--fg);font-size:clamp(28px,8vw,46px);font-weight:700;color:#fff;line-height:1.25}
+.cta-bar .acc{color:#FF3B30}
+.cta-bar .yl{color:var(--yellow)}
+
+/* ── 5. 3단 카드 ── */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);border-top:3px solid var(--dark)}
+.c3{border-right:1px solid #e0e0e0;overflow:hidden}
+.c3:last-child{border-right:none}
+.c3-img{aspect-ratio:1/1;overflow:hidden;background:#f0f0f0}
+.c3-img img{width:100%;height:100%;object-fit:cover}
+.c3-body{padding:14px 10px 18px}
+.c3-icon{font-size:20px;margin-bottom:6px}
+.c3-body b{display:block;font-size:12px;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.c3-body p{font-size:10px;color:#555;line-height:1.65;font-weight:400}
+
+/* ── 6. 회사 소개 ── */
+.company{background:var(--dark);padding:48px 24px}
+.company h2{font-family:var(--fg);font-size:clamp(26px,7vw,40px);font-weight:700;color:#fff;margin-bottom:28px;line-height:1.25}
+.co-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.co-card{background:#f5eded;border-radius:14px;padding:16px 10px;text-align:center}
+.co-avatar{width:64px;height:64px;border-radius:50%;overflow:hidden;margin:0 auto 12px;background:#ddd}
+.co-avatar img{width:100%;height:100%;object-fit:cover}
+.co-card p{font-size:9.5px;color:#333;line-height:1.6;margin-bottom:8px;font-weight:400}
+.co-card b{display:block;font-size:9px;font-weight:700;color:var(--red)}
+.co-card small{font-size:8.5px;color:#888}
+
+/* ── 7. 파트너 ── */
+.partners{background:var(--dark);padding:0 24px 48px}
+.partners h3{font-family:var(--fg);font-size:clamp(22px,6vw,34px);font-weight:700;color:#fff;text-align:right;margin-bottom:24px;padding-top:8px}
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.p-col h4{font-size:10px;color:#888;font-weight:500;margin-bottom:8px;letter-spacing:.5px}
+.p-col p{font-size:11.5px;color:#fff;font-weight:600;line-height:1.9}
+.p-col p span{font-size:9.5px;color:#888;font-weight:400}
+
+/* ── 8. 보고서 소개 ── */
+.report{padding:48px 24px}
+.badge{display:inline-block;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:5px 14px;border-radius:50px;margin-bottom:14px;letter-spacing:.8px}
+.report h2{font-family:var(--fg);font-size:clamp(30px,9vw,48px);font-weight:700;line-height:1.18;margin-bottom:4px}
+.report h2 .red{color:var(--red2)}
+.report-cover{background:linear-gradient(135deg,#1a3060,#0d1f45);border-radius:18px;padding:30px 24px;margin:24px 0 0;text-align:center}
+.rc-eyebrow{font-size:9px;letter-spacing:4px;color:rgba(255,255,255,.4);margin-bottom:12px;font-weight:400}
+.rc-title{font-family:var(--fg);font-size:20px;font-weight:700;color:#fff;margin-bottom:10px}
+.rc-name{font-size:14px;color:rgba(255,255,255,.85);margin-bottom:4px;font-weight:500}
+.rc-sub{font-size:11px;color:rgba(255,255,255,.5);font-weight:400}
+.bullets{list-style:none;margin-top:24px}
+.bullets li{font-size:13px;color:#333;padding:9px 0;border-bottom:1px solid #f0f0f0;display:flex;gap:10px;line-height:1.5;font-weight:400}
+.bullets li::before{content:'•';color:var(--red);font-weight:900;flex-shrink:0}
+
+/* ── 9. 한 권으로 끝 ── */
+.onebook{background:var(--dark);padding:48px 24px}
+.onebook h2{font-family:var(--fg);font-size:clamp(30px,9vw,48px);font-weight:700;color:#fff;line-height:1.18;margin-bottom:26px}
+.onebook h2 .yl{color:var(--yellow)}
+.chart-box{background:#fff;border-radius:16px;padding:20px;margin-bottom:20px}
+.chart-lbl{font-size:10px;color:#999;margin-bottom:14px;font-weight:400}
+.br{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.br-name{font-size:8.5px;color:#555;width:72px;flex-shrink:0;line-height:1.3;font-weight:500}
+.br-track{flex:1;background:#f0f0f0;border-radius:6px;height:18px;overflow:hidden}
+.br-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:8px}
+.br-fill small{font-size:9px;font-weight:700;color:#fff}
+.g{background:#27ae60}.r{background:#e74c3c}
+.flow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.fpill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:11px;padding:9px 13px;border-radius:10px;font-weight:500}
+.farr{color:var(--yellow);font-size:16px;line-height:2.2}
+
+/* ── 10. 샘플 슬라이더 ── */
+.sample{padding:48px 24px 40px}
+.sample h2{font-family:var(--fg);font-size:clamp(22px,6vw,34px);font-weight:700;margin-bottom:4px}
+.sample h2 .red{color:var(--red2)}
+.slider{display:flex;gap:10px;overflow-x:auto;padding:20px 0 6px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.slider::-webkit-scrollbar{display:none}
+.slide{flex:0 0 130px;scroll-snap-align:start;border-radius:12px;border:1px solid #e5e5e5;overflow:hidden;background:#fff}
+.sl-head{padding:11px;border-bottom:1px solid #f0f0f0}
+.sl-num{font-size:8px;color:var(--red);font-weight:700;letter-spacing:.8px}
+.sl-title{font-size:10px;font-weight:700;margin-top:3px;color:var(--dark)}
+.sl-body{padding:11px;font-size:8px;color:#666;line-height:1.75;font-weight:400}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--dark);color:var(--dark);padding:15px;border-radius:14px;font-size:14px;font-weight:600;margin-top:16px;font-family:var(--ft)}
+
+/* ── 11. 최종 CTA ── */
+.final{background:var(--red);padding:48px 24px 56px;text-align:center}
+.final h2{font-family:var(--fg);font-size:clamp(28px,8vw,44px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:8px}
+.final p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:30px;font-weight:400}
+.kakao-big{display:block;background:var(--yellow);color:#3C1E1E;padding:18px 24px;border-radius:16px;font-size:17px;font-weight:700;margin-bottom:12px;font-family:var(--ft)}
+.kakao-big small{display:block;font-size:11px;font-weight:400;margin-top:5px;color:#5a3a00}
+.app-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.app-pill{display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,.15);color:#fff;padding:14px;border-radius:12px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.25)}
+.seats-note{font-size:12px;color:rgba(255,255,255,.7);font-weight:400}
+.seats-note strong{color:var(--yellow);font-weight:700}
+
+/* ── FOOTER ── */
+.footer{background:#0a0a0a;padding:30px 24px;font-size:11px;color:#555;line-height:1.9;font-weight:400}
+.footer b{color:#888;font-weight:600}
+.footer a{color:#666}
+
+/* ── RESPONSIVE ── */
+@media(min-width:600px){
+  .c3-body p{font-size:11px}
+  .c3-body b{font-size:13px}
+  .p-grid{grid-template-columns:repeat(4,1fr)}
+  .slide{flex:0 0 160px}
+}
+@media(min-width:960px){
+  .hero{max-height:800px}
+  .event-sec,.report,.sample,.final,.onebook,.company{padding-left:10%;padding-right:10%}
+  .partners{padding-left:10%;padding-right:10%}
+}
+</style>
+</head>
+<body>
+
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-inner">
+    <img class="hero-logo" src="images/logo.png" alt="J KLASSIK">
+    <h1>독일유학이 기회<br>내 성적이<br>통할까?</h1>
+    <a class="kakao-btn" href="http://pf.kakao.com/_jJvvT" target="_blank">
+      <span class="kakao-ch">Ch</span> 독일유학제이클래식 +
+    </a>
+  </div>
+</section>
+
+<!-- ② 이벤트 타이틀 -->
+<section class="event-sec">
+  <h2>"AI입시컨설팅"<br>할인이벤트</h2>
+  <p class="event-desc">독일 입시컨설팅, AI가 2만원에 해드립니다.<br>타 유학원 200만원 상당의 서비스를 앱 출시 특가로</p>
+  <div class="price-stack">
+    <span class="s1">타 유학원 200만원~</span>
+    <span class="s2">정가 10만원</span>
+    <span class="final-p">할인특가 2만원에!</span>
+  </div>
+  <a class="app-dl" href="https://apps.apple.com/us/app/%EC%A0%9C%EC%9D%B4%ED%81%B4%EB%9E%98%EC%8B%9D-%EB%8F%85%EC%9D%BC%EC%9C%A0%ED%95%99/id6757157346" target="_blank">APP 다운로드</a>
+</section>
+
+<!-- ③ 앱 목업 2×1 -->
+<div class="mockup-grid">
+  <div class="mockup-cell"><img src="images/aiipcon_sp04.png" alt="앱 사용 모습 1"></div>
+  <div class="mockup-cell"><img src="images/aiipcon_sp05.png" alt="앱 사용 모습 2"></div>
+</div>
+
+<!-- ④ 응모 CTA 바 -->
+<section class="cta-bar">
+  <h2>지금 응모하세요!<br><span class="acc">선착순</span> <span class="yl">30명</span></h2>
+</section>
+
+<!-- ⑤ 3단 카드 -->
+<section class="cards3">
+  <div class="c3">
+    <div class="c3-img"><img src="images/jk_01.png" alt="참가방법"></div>
+    <div class="c3-body">
+      <div class="c3-icon">🔔</div>
+      <b>참가 방법</b>
+      <p>카톡채널 "독일유학제이클래식"에 "AI입시컨설팅 신청희망"이라고 적어 주세요.</p>
+    </div>
+  </div>
+  <div class="c3">
+    <div class="c3-img"><img src="images/aiipcon_sp05.png" alt="선착순30명"></div>
+    <div class="c3-body">
+      <div class="c3-icon">🎯</div>
+      <b>선착순 30명</b>
+      <p>2026년 7-8월 공식출시 전 할인특가로 AI 입시컨설팅서비스를 먼저 만나보세요.</p>
+    </div>
+  </div>
+  <div class="c3">
+    <div class="c3-img"><img src="images/aiipcon_sp04.png" alt="문의"></div>
+    <div class="c3-body">
+      <div class="c3-icon">📞</div>
+      <b>문의</b>
+      <p>카톡채널 "독일유학제이클래식"<br>전화 T. 1661-4995</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ 회사 소개 -->
+<section class="company">
+  <h2>제이클래식은<br>무슨 회사인가?</h2>
+  <div class="co-grid">
+    <div class="co-card">
+      <div class="co-avatar"><img src="images/hero.jpg" alt="베를린 본사"></div>
+      <p>"베를린, 서울에 위치한 가장 많은 유학생이 찾는 독일전문유학원"</p>
+      <b>J KLASSIK CO.LTD.</b>
+      <small>T. 1661-4995</small>
+    </div>
+    <div class="co-card">
+      <div class="co-avatar" style="display:flex;align-items:center;justify-content:center;background:#f0e8e8">
+        <img src="images/logo.png" alt="로고" style="width:42px;height:42px;object-fit:contain">
+      </div>
+      <p>"2006년 창사 이래 20년간 입시상담 및 서비스 진행을 통해 완성된 노하우"</p>
+      <b>제이클래식 앱 다운로드</b>
+      <small>iOS &amp; Android App</small>
+    </div>
+    <div class="co-card">
+      <div class="co-avatar"><img src="images/office.jpg" alt="서울 지사"></div>
+      <p>"유일한 독일현지유학원" 숙소, 어학원, 보험, 비자까지 현지케어서비스</p>
+      <b>JKLASSIK.CO.KR</b>
+      <small>앱&홈페이지, 카톡, 전화</small>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ 파트너 -->
+<section class="partners">
+  <h3>Our partners</h3>
+  <div class="p-grid">
+    <div class="p-col">
+      <h4>[학교&amp;학원]</h4>
+      <p>Goethe-Institute<br>Alpadia Language Schools<br>Humboldt-Institut e.V.<br>GLS Sprachenzentrum Berlin<br>University of Europe<br>SRH University <span>외 40여개</span></p>
+    </div>
+    <div class="p-col">
+      <h4>[의료&amp;보험]</h4>
+      <p>Techniker Krankenkasse<br>Care Concept AG<br>Dr-Walter GmbH <span>외 10여개</span></p>
+    </div>
+    <div class="p-col">
+      <h4>[주택회사]</h4>
+      <p>Berlinovo Immobilien GmbH<br>Covivio Immobilien GmbH<br>unit36<br>SMARTments</p>
+    </div>
+    <div class="p-col">
+      <h4>[기타]</h4>
+      <p>Deutsche Bank<br>Bürgeramt Wedding<br>Fintiba<br>O2, Telekom, 1&amp;1<br>현대해상, 한화보험 등</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ 보고서 소개 -->
+<section class="report">
+  <span class="badge">AI CONSULTING REPORT</span>
+  <h2>AI입시컨설팅<br><span class="red">보고서</span><br>미리 보기</h2>
+  <div class="report-cover">
+    <div class="rc-eyebrow">J - K L A S S I K</div>
+    <div class="rc-title">독일 유학 입시컨설팅 보고서</div>
+    <div class="rc-name">홍길동</div>
+    <div class="rc-sub">Bachelor · 경영학 / Betriebswirtschaftslehre · 겨울학기(WS) 2026/27</div>
+  </div>
+  <ul class="bullets">
+    <li>20년 노하우와 자체 DB를 토대로 한 독일유학전문 AI입시컨설팅</li>
+    <li>정확한 프로필 분석</li>
+    <li>추천대학 입시전략</li>
+    <li>목표대학 입학가능성 예측</li>
+    <li>컨설팅보고서 제공</li>
+  </ul>
+</section>
+
+<!-- ⑨ 한 권으로 끝 -->
+<section class="onebook">
+  <h2>컨설팅 보고서<br><span class="yl">한 권</span>으로<br>독일유학<br>준비 끝!</h2>
+  <div class="chart-box">
+    <div class="chart-lbl">대학별 합격 확률 (리서치 요약)</div>
+    <div class="br"><span class="br-name">Uni Regensburg</span><div class="br-track"><div class="br-fill g" style="width:80%"><small>80%</small></div></div></div>
+    <div class="br"><span class="br-name">Uni Duisburg-Essen</span><div class="br-track"><div class="br-fill g" style="width:75%"><small>75%</small></div></div></div>
+    <div class="br"><span class="br-name">Uni Bremen</span><div class="br-track"><div class="br-fill g" style="width:70%"><small>70%</small></div></div></div>
+    <div class="br"><span class="br-name">Uni Passau</span><div class="br-track"><div class="br-fill g" style="width:70%"><small>70%</small></div></div></div>
+    <div class="br"><span class="br-name">Uni Frankfurt</span><div class="br-track"><div class="br-fill r" style="width:30%"><small>30%</small></div></div></div>
+    <div class="br"><span class="br-name">Uni Hamburg</span><div class="br-track"><div class="br-fill r" style="width:25%"><small>25%</small></div></div></div>
+  </div>
+  <div class="flow">
+    <span class="fpill">기초정보 입력</span>
+    <span class="farr">→</span>
+    <span class="fpill">비용 결제</span>
+    <span class="farr">→</span>
+    <span class="fpill">성적표 제출</span>
+    <span class="farr">→</span>
+    <span class="fpill">보고서 수령</span>
+  </div>
+</section>
+
+<!-- ⑩ 샘플 슬라이더 -->
+<section class="sample">
+  <h2>AI입시컨설팅 <span class="red">보고서 샘플</span></h2>
+  <div class="slider">
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 1</div><div class="sl-title">Executive Summary</div></div><div class="sl-body">합격 가능성 한눈에<br>대학별 분석 요약<br>추천 대학 리스트</div></div>
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 2</div><div class="sl-title">프로필 분석</div></div><div class="sl-body">수능·대학 성적<br>독일식 환산 공식<br>지원자격 판단</div></div>
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 3</div><div class="sl-title">대학 개요</div></div><div class="sl-body">전공별 대학 분류<br>지원 경로 안내<br>VPD·Uni-Assist</div></div>
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 4</div><div class="sl-title">추천 대학 분석</div></div><div class="sl-body">NC 상태·마감일<br>어학 요건·서류<br>합격 확률 수치화</div></div>
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 5</div><div class="sl-title">지원 전략</div></div><div class="sl-body">맞춤 액션 플랜<br>타임라인<br>서류 체크리스트</div></div>
+    <div class="slide"><div class="sl-head"><div class="sl-num">PART 6</div><div class="sl-title">진로 &amp; 취업</div></div><div class="sl-body">독일 현지 취업<br>예상 연봉<br>비자·영주권 경로</div></div>
+  </div>
+  <a class="dl-btn" href="images/jklassik_sample.pdf" target="_blank">📥 샘플 보고서 다운로드 (PDF)</a>
+</section>
+
+<!-- ⑪ 최종 CTA -->
+<section class="final">
+  <h2>지금 바로<br>응모하세요</h2>
+  <p>선착순 30명 · 이벤트 특가 2만원<br>카카오채널에서 신청하면 끝!</p>
+  <a class="kakao-big" href="http://pf.kakao.com/_jJvvT/chat" target="_blank">
+    카카오채널에서 응모하기
+    <small>독일유학제이클래식 → "AI입시컨설팅 신청희망" 전송</small>
+  </a>
+  <div class="app-row">
+    <a class="app-pill" href="https://apps.apple.com/us/app/%EC%A0%9C%EC%9D%B4%ED%81%B4%EB%9E%98%EC%8B%9D-%EB%8F%85%EC%9D%BC%EC%9C%A0%ED%95%99/id6757157346" target="_blank">🍎 App Store</a>
+    <a class="app-pill" href="https://play.google.com/store/apps/details?id=com.jklassik.app&pcampaignid=web_share" target="_blank">▶ Google Play</a>
+  </div>
+  <p class="seats-note">⚡ 잔여 선착순 <strong>30명</strong> · 조기 마감 가능</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <b>J KLASSIK CO.LTD.</b><br>
+  베를린 본사: Katharinenstraße 18, 10711 Berlin Germany<br>
+  서울 지사: 서울시 서초구 강남대로 341 삼원빌딩 8층<br>
+  상담전화: 1661-4995 &nbsp;|&nbsp;
+  <a href="https://jklassik.co.kr" target="_blank">jklassik.co.kr</a>
+</footer>
+
+</body>
+</html>
