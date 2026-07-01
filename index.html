@@ -178,6 +178,10 @@ a{text-decoration:none}
 .radio-pill input:checked + span{background:var(--red);border-color:var(--red);color:#fff}
 .submit-btn{width:100%;background:var(--dark);color:#fff;border:none;padding:15px;border-radius:12px;font-size:15px;font-weight:700;font-family:var(--ft);margin-top:8px;cursor:pointer}
 .form-note{font-size:11px;color:#999;text-align:center;margin-top:10px;line-height:1.6}
+.agree-row{display:flex;align-items:center;gap:8px;margin-top:14px;margin-bottom:4px}
+.agree-row input[type=checkbox]{width:18px;height:18px;accent-color:var(--red);flex-shrink:0;cursor:pointer}
+.agree-row label{font-size:12.5px;color:#333;line-height:1.5;cursor:pointer}
+.agree-row a{color:var(--red2);text-decoration:underline}
 .form-status{display:none;text-align:center;padding:30px 10px}
 .form-status.show{display:block}
 .form-status .ico{font-size:40px;margin-bottom:14px}
@@ -241,7 +245,7 @@ a{text-decoration:none}
     <div class="c3-body">
       <div class="c3-icon">🔔</div>
       <b>참가 방법</b>
-      <p>위 "신청하기" 버튼을 눌러 신청서를 작성해 주세요. 카톡채널 "독일유학제이클래식"으로 문의도 가능합니다.</p>
+      <p>위 "신청하기" 버튼을 눌러 신청서를 작성해 주세요.</p>
     </div>
   </div>
   <div class="c3">
@@ -295,13 +299,13 @@ a{text-decoration:none}
       <div class="co-avatar" style="display:flex;align-items:center;justify-content:center;background:#f0e8e8">
         <img src="images/logo.png" alt="로고" style="width:42px;height:42px;object-fit:contain">
       </div>
-      <p>"2006년 창사 이래 20년간 입시상담 및 서비스 진행을 통해 완성된 노하우"</p>
+      <p>"20년간 입시상담 및 서비스 진행을 통해 완성된 노하우"</p>
       <b>제이클래식 앱 다운로드</b>
       <small>iOS &amp; Android App</small>
     </div>
     <div class="co-card">
       <div class="co-avatar"><img src="images/office.jpg" alt="서울 지사"></div>
-      <p>"유일한 독일현지유학원" 숙소, 어학원, 보험, 비자까지 현지케어서비스</p>
+      <p>"숙소, 어학원, 보험, 비자까지 현지케어서비스"</p>
       <b>JKLASSIK.CO.KR</b>
       <small>앱&홈페이지, 카톡, 전화</small>
     </div>
@@ -317,7 +321,7 @@ a{text-decoration:none}
       <p>Goethe-Institute<br>Alpadia Language Schools<br>Humboldt-Institut e.V.<br>GLS Sprachenzentrum Berlin<br>University of Europe<br>SRH University <span>외 40여개</span></p>
     </div>
     <div class="p-col">
-      <h4>[의료&amp;보험]</h4>
+      <h4>[보험]</h4>
       <p>Techniker Krankenkasse<br>Care Concept AG<br>Dr-Walter GmbH <span>외 10여개</span></p>
     </div>
     <div class="p-col">
@@ -411,6 +415,10 @@ a{text-decoration:none}
       </div>
       <input type="hidden" name="_subject" value="[AI입시컨설팅] 새 신청이 도착했습니다">
 
+      <div class="agree-row">
+        <input type="checkbox" id="agreeCheck">
+        <label for="agreeCheck">(필수) 개인정보의 수집 및 이용약관에 동의합니다. <a href="https://jklassik.co.kr/contents/view_clause.html" target="_blank">자세히 보기</a></label>
+      </div>
       <button class="submit-btn" type="submit">신청서 제출하기</button>
       <p class="form-note">제출하신 정보는 AI입시컨설팅 상담 목적으로만 사용됩니다.</p>
     </form>
@@ -434,6 +442,10 @@ function closeApplyModal(){
 }
 document.getElementById('applyForm').addEventListener('submit', function(e){
   e.preventDefault();
+  if(!document.getElementById('agreeCheck').checked){
+    alert('개인정보 수집 및 이용약관에 동의해 주세요.');
+    return;
+  }
   var form = e.target;
   var data = new FormData(form);
   fetch(form.action, {
