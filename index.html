@@ -146,6 +146,9 @@ a{text-decoration:none}
 .app-pill{display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,.15);color:#fff;padding:14px;border-radius:12px;font-size:12px;font-weight:600;border:1px solid rgba(255,255,255,.25)}
 .seats-note{font-size:12px;color:rgba(255,255,255,.7);font-weight:400}
 .seats-note strong{color:var(--yellow);font-weight:700}
+.qr-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.qr-item{display:flex;flex-direction:column;align-items:center;gap:12px}
+.qr-item img{width:130px;height:130px;border-radius:12px;background:#fff;padding:6px}
 
 /* ── FOOTER ── */
 .footer{background:#0a0a0a;padding:30px 24px;font-size:11px;color:#555;line-height:1.9;font-weight:400}
@@ -225,7 +228,7 @@ a{text-decoration:none}
 
 <!-- ④ 응모 CTA 바 + 신청버튼 -->
 <section class="cta-bar">
-  <h2>지금 응모하세요!<br><span class="acc">선착순</span> <span class="yl">20명</span></h2>
+  <h2>지금 응모하세요!<br><span class="acc">선착순</span> <span class="yl">30명</span></h2>
 </section>
 <div class="apply-cta-wrap">
   <button class="apply-btn" type="button" onclick="openApplyModal()">📝 신청하기</button>
@@ -245,7 +248,7 @@ a{text-decoration:none}
     <div class="c3-img"><img src="images/canva01.png" alt="선착순30명"></div>
     <div class="c3-body">
       <div class="c3-icon">🎯</div>
-      <b>선착순 20명</b>
+      <b>선착순 30명</b>
       <p>2026년 7-8월 공식출시 전 할인특가로 AI 입시컨설팅서비스를 먼저 만나보세요.</p>
     </div>
   </div>
@@ -328,42 +331,23 @@ a{text-decoration:none}
   </div>
 </section>
 
-<!-- ⑨ 한 권으로 끝 -->
-<section class="onebook">
-  <h2>컨설팅 보고서<br><span class="yl">한 권</span>으로<br>독일유학<br>준비 끝!</h2>
-  <div class="chart-box">
-    <div class="chart-lbl">대학별 합격 확률 (리서치 요약)</div>
-    <div class="br"><span class="br-name">Uni Regensburg</span><div class="br-track"><div class="br-fill g" style="width:80%"><small>80%</small></div></div></div>
-    <div class="br"><span class="br-name">Uni Duisburg-Essen</span><div class="br-track"><div class="br-fill g" style="width:75%"><small>75%</small></div></div></div>
-    <div class="br"><span class="br-name">Uni Bremen</span><div class="br-track"><div class="br-fill g" style="width:70%"><small>70%</small></div></div></div>
-    <div class="br"><span class="br-name">Uni Passau</span><div class="br-track"><div class="br-fill g" style="width:70%"><small>70%</small></div></div></div>
-    <div class="br"><span class="br-name">Uni Frankfurt</span><div class="br-track"><div class="br-fill r" style="width:30%"><small>30%</small></div></div></div>
-    <div class="br"><span class="br-name">Uni Hamburg</span><div class="br-track"><div class="br-fill r" style="width:25%"><small>25%</small></div></div></div>
-  </div>
-  <div class="flow">
-    <span class="fpill">기초정보 입력</span>
-    <span class="farr">→</span>
-    <span class="fpill">비용 결제</span>
-    <span class="farr">→</span>
-    <span class="fpill">성적표 제출</span>
-    <span class="farr">→</span>
-    <span class="fpill">보고서 수령</span>
-  </div>
-</section>
-
 <!-- ⑪ 최종 CTA -->
 <section class="final">
-  <h2>지금 바로<br>응모하세요</h2>
-  <p>선착순 20명 · 이벤트 특가 2만원<br>아래 버튼으로 신청하면 끝!</p>
-  <button class="kakao-big" type="button" onclick="openApplyModal()" style="border:none;width:100%;cursor:pointer">
-    📝 신청하기
-    <small>이름·연락처·전공 등 간단 정보만 입력하면 완료</small>
-  </button>
-  <div class="app-row">
-    <a class="app-pill" href="https://apps.apple.com/us/app/%EC%A0%9C%EC%9D%B4%ED%81%B4%EB%9E%98%EC%8B%9D-%EB%8F%85%EC%9D%BC%EC%9C%A0%ED%95%99/id6757157346" target="_blank">🍎 App Store</a>
-    <a class="app-pill" href="https://play.google.com/store/apps/details?id=com.jklassik.app&pcampaignid=web_share" target="_blank">▶ Google Play</a>
+  <h2>제이클래식 독일만능앱<br>지금 바로<br>다운로드하세요</h2>
+  <div class="qr-row">
+    <div class="qr-item">
+      <a href="https://apps.apple.com/us/app/%EC%A0%9C%EC%9D%B4%ED%81%B4%EB%9E%98%EC%8B%9D-%EB%8F%85%EC%9D%BC%EC%9C%A0%ED%95%99/id6757157346" target="_blank">
+        <img src="images/qrcode_ios.png" alt="iOS QR코드">
+      </a>
+      <a class="app-pill" href="https://apps.apple.com/us/app/%EC%A0%9C%EC%9D%B4%ED%81%B4%EB%9E%98%EC%8B%9D-%EB%8F%85%EC%9D%BC%EC%9C%A0%ED%95%99/id6757157346" target="_blank">🍎 App Store</a>
+    </div>
+    <div class="qr-item">
+      <a href="https://play.google.com/store/apps/details?id=com.jklassik.app&pcampaignid=web_share" target="_blank">
+        <img src="images/qrcode_android.png" alt="Android QR코드">
+      </a>
+      <a class="app-pill" href="https://play.google.com/store/apps/details?id=com.jklassik.app&pcampaignid=web_share" target="_blank">▶ Google Play</a>
+    </div>
   </div>
-  <p class="seats-note">⚡ 잔여 선착순 <strong>20명</strong> · 조기 마감 가능</p>
 </section>
 
 <!-- FOOTER -->
