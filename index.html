@@ -421,7 +421,7 @@ a{text-decoration:none}
       </div>
       <div class="agree-row">
         <input type="checkbox" id="agreeJoin">
-        <label for="agreeJoin">(필수) 제이클래식 홈페이지에 자동가입됩니다. <a href="https://jklassik.co.kr/contents/join_clause.html" target="_blank">자세히 보기</a></label>
+        <label for="agreeJoin">(필수) 제이클래식 홈페이지 회원가입에 동의합니다. <a href="https://jklassik.co.kr/contents/join_clause.html" target="_blank">자세히 보기</a></label>
       </div>
       <button class="submit-btn" type="submit">신청서 제출하기</button>
       <p class="form-note">제출하신 정보는 AI입시컨설팅 상담 목적으로만 사용됩니다.</p>
@@ -451,7 +451,7 @@ document.getElementById('applyForm').addEventListener('submit', function(e){
     return;
   }
   if(!document.getElementById('agreeJoin').checked){
-    alert('제이클래식 홈페이지 자동가입에 동의해 주세요.');
+    alert('제이클래식 홈페이지 회원가입에 동의해 주세요.');
     return;
   }
   var form = e.target;
